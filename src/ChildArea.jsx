@@ -6,7 +6,7 @@ const style = {
   backgroundColor: "khaki"
 };
 export const ChildArea = memo((props) => {
-  const { open } = props;
+  const { open, onClickClose } = props;
   console.log("ChildArea has rendered");
 
   const data = [...Array(2000).keys()];
@@ -19,6 +19,7 @@ export const ChildArea = memo((props) => {
       {open ? (
         <div style={style}>
           <p>child component</p>
+          <button onClick={onClickClose}>cancel</button>
         </div>
       ) : null}
     </>
